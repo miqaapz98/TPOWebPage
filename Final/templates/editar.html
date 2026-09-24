@@ -1,0 +1,45 @@
+{%  extends 'encabezado.html' %}
+
+{% block body %}
+
+<h3> Editar Venta </h3>
+<div class="col-md-10" offset- md-10 >
+    <div class="card card-body">
+    <form action="/actualizaVenta/{{venta.0}}" method="POST">
+        <div class="form-group"> 
+            <p>DNI<input type="number" name="dni" class="form-control" size="8" required value="{{venta.1}}"></p>
+        </div>
+        <div class="form-group">
+            <label for="NOMBRE">NOMBRE</label><input type="text" name="nombre" class="form-control" value="{{venta.2}}"> 
+        </div>
+        <div class="form-group"> 
+            <label for="apellido">Apellido</label><input type="text" name="apellido" class="form-control" value="{{venta.3}}">
+        </div>
+        <div class="form-group"> 
+            <p>Telefono: <input type="number" name="telef" placeholder="Telefono" class="form-control" value="{{venta.4}}"></p>
+        </div>
+        <div class="form-group"> 
+            <p>Codigo Bicicleta: 
+                <select name="cod_Bici" required class="form-control"> 
+                    <option value="BM3">BM3</option>
+                    <option value="MB21">MB21</option>
+                    <option value="MB25">MB25</option>
+                    <option value="PL2">PL2</option>
+                    <option value="PS45">PS45</option>
+                </select>
+            </p>
+        </div>
+        <div class="form-group"> 
+            <p>Fecha: <input type="date" name="fecha_Venta" placeholder="aaaa-mm-dd" class="form-control" value="{{venta.6}}"></p>
+        </div>
+        <div class="form-group"> 
+            <p>Precio: <input type="number" name="precio" class="form-control" value="{{venta.7}}"></p>
+        </div>
+        <div class="form-group"> 
+            <button type="submit" class="btn btn-primary btn block"> Save </button> 
+        </div>
+        
+    </form>
+    </div>
+</div>
+{% endblock %}
